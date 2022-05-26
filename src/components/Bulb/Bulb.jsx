@@ -1,7 +1,7 @@
 import "./Bulb.scss";
 
 const Bulb = () => {
-  return <div className="bulb"></div>;
+  return <div className=""></div>;
 };
 
 export default Bulb;
