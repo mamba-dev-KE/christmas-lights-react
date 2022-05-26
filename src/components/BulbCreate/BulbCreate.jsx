@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { BulbContext } from "../../context/bulbContext";
+import { BulbContext } from "../../context/BulbsContext";
 import { addBulb } from "../../app/store";
 import "./BulbCreate.scss";
 

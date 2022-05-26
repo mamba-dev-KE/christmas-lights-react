@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FaTimes } from "react-icons/fa";
 import { removeBulb, toggleLight } from "../../app/store";
-import { BulbContext } from "../../context/bulbContext";
+import { BulbContext } from "../../context/BulbsContext";
 import { motion } from "framer-motion";
 import "./Bulb.scss";
 

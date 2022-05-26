@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BulbContext } from "../../context/bulbContext";
+import { BulbContext } from "../../context/BulbsContext";
 import Bulb from "../Bulb/Bulb";
 import { AnimatePresence, motion } from "framer-motion";
 import "./Bulbs.scss";

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Bulbs, Switch, BulbCreate } from "./components";
-import { BulbContext } from "./context/bulbContext";
+import { BulbContext } from "./context/BulbsContext";
 
 const App = () => {
   const {

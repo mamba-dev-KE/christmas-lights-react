@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BulbContext } from "../../context/bulbContext";
+import { BulbContext } from "../../context/BulbsContext";
 import { toggleLights } from "../../app/store";
 import "./Switch.scss";
 
