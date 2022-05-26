@@ -5,6 +5,7 @@
   /* variable declarations */
   --color-white: hsl(0, 0%, 100%);
   --color-dark-blue: hsl(237, 42%, 10%);
+  --gap: 2rem;
 }
 
 *,
@@ -29,5 +30,15 @@ body {
 /* Bulbs section */
 .bulbs {
   min-height: 70vh;
-  border: 1px solid red;
+}
+
+/* UTILITY CLASSES */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.center {
+  margin-inline: auto;
 }

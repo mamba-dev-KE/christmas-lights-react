@@ -3,7 +3,7 @@ import "./BulbGroup.scss";
 
 const BulbGroup = () => {
   return (
-    <div className="bulb-group">
+    <div className="bulb-group flex">
       <Bulb />
       <Bulb />
       <Bulb />

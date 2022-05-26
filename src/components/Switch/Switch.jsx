@@ -1,5 +1,21 @@
+import { useContext } from "react";
+import { BulbContext } from "../../context/bulbContext";
+import { toggleLights } from "../../store/store";
+import "./Switch.scss";
+
 const Switch = () => {
-  return <div>Switch</div>;
+  const {
+    state: { isLightsOn },
+    dispatch,
+  } = useContext(BulbContext);
+
+  return (
+    <>
+      <button onClick={() => dispatch(toggleLights())} className="switch">
+        Lights {!isLightsOn ? "On" : "Off"}
+      </button>
+    </>
+  );
 };
 
 export default Switch;
