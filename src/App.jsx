@@ -1,15 +1,13 @@
-import Bulb from "./components/Bulb/Bulb";
-import BulgCreate from "./components/BulbCreate/BulbCreate";
-import Switch from "./components/Switch/Switch";
+import { Bulbs, Switch, BulbCreate } from "./components";
 
 const App = () => {
   return (
     <div className="container">
       <section className="config">
-        <BulgCreate />
+        <BulbCreate />
       </section>
       <section className="bulbs">
-        <Bulb />
+        <Bulbs />
       </section>
       <section className="controls">
         <Switch />

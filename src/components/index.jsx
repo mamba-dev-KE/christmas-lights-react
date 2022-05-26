@@ -1,3 +1,3 @@
-export { default as Bulb } from "./Bulb";
-export { default as Switch } from "./Switch";
-export { default as BulbCreate } from "./BulbCreate";
+export { default as Bulbs } from "./Bulbs/Bulbs";
+export { default as Switch } from "./Switch/Switch";
+export { default as BulbCreate } from "./BulbCreate/BulbCreate";

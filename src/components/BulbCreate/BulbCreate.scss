@@ -1,4 +1,26 @@
-input {
-  padding: 0.5rem 1rem;
-  margin-top: 2rem;
+.form {
+  justify-content: center;
+}
+
+.bulb-create {
+  border: 0.3rem solid hsla(51, 3%, 45%, 0.8);
+  padding: 2rem 1rem;
+  margin-top: 1rem;
+
+  * + * {
+    margin-top: 2rem;
+  }
+}
+
+.bulb-create__title {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.bulb-create__colors {
+  width: 50%;
+  padding: 0.8rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgb(180, 39, 39);
+  color: white;
 }
