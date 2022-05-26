@@ -1,15 +1,15 @@
-import BulbGroup from "./components/BulbGroup/BulbGroup";
-import LightsConfig from "./components/LightsConfig/LightsConfig";
+import Bulb from "./components/Bulb/Bulb";
+import BulgCreate from "./components/BulbCreate/BulbCreate";
 import Switch from "./components/Switch/Switch";
 
 const App = () => {
   return (
     <div className="container">
       <section className="config">
-        <LightsConfig />
+        <BulgCreate />
       </section>
       <section className="bulbs">
-        <BulbGroup />
+        <Bulb />
       </section>
       <section className="controls">
         <Switch />

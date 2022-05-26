@@ -5,21 +5,9 @@ export const toggleLights = () => {
   };
 };
 
-export const addRedLights = (payload) => {
+export const addBulb = (payload) => {
   return {
     type: "ADD_RED",
-    payload,
-  };
-};
-export const addBlueLights = (payload) => {
-  return {
-    type: "ADD_BLUE",
-    payload,
-  };
-};
-export const addGreenLights = (payload) => {
-  return {
-    type: "ADD_GREEN",
     payload,
   };
 };
@@ -32,20 +20,10 @@ export const bulbReducer = (state, action) => {
         ...state,
         isLightsOn: !state.isLightsOn,
       };
-    case "ADD_RED":
+    case "ADD_BULB":
       return {
         ...state,
         redLights: action.payload,
-      };
-    case "ADD_BLUE":
-      return {
-        ...state,
-        blueLights: action.payload,
-      };
-    case "ADD_GREEN":
-      return {
-        ...state,
-        greenLights: action.payload,
       };
     default:
       return state;

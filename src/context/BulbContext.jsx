@@ -6,9 +6,7 @@ export const BulbContext = createContext();
 export const BulbContextProvider = ({ children }) => {
   const initialState = {
     isLightsOn: true,
-    redLights: 0,
-    blueLights: 0,
-    greenLights: 0,
+    bulbs: [],
   };
 
   const [state, dispatch] = useReducer(bulbReducer, initialState);
