@@ -7,6 +7,7 @@ const Bulbs = () => {
   const {
     state: { bulbs },
   } = useContext(BulbContext);
+  
   return (
     <section className="bulbs flex">
       {bulbs?.map((bulb) => (

@@ -12,6 +12,13 @@ export const addBulb = (payload) => {
   };
 };
 
+export const removeBulb = (payload) => {
+  return {
+    type: "REMOVE_BULB",
+    payload,
+  };
+};
+
 // reducers
 export const bulbReducer = (state, action) => {
   switch (action.type) {
@@ -24,6 +31,11 @@ export const bulbReducer = (state, action) => {
       return {
         ...state,
         bulbs: [...state.bulbs, action.payload],
+      };
+    case "REMOVE_BULB":
+      return {
+        ...state,
+        bulbs: [...state.bulbs.filter((bulb) => bulb.id !== action.payload)],
       };
     default:
       return state;
