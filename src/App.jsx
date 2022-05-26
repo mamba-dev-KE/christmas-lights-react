@@ -1,11 +1,17 @@
-import { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import BulbGroup from "./components/BulbGroup/BulbGroup";
+import Switch from "./components/Switch/Switch";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className="App" />;
-}
+const App = () => {
+  return (
+    <div className="container">
+      <section className="bulbs">
+        <BulbGroup />
+      </section>
+      <section className="controls">
+        <Switch />
+      </section>
+    </div>
+  );
+};
 
 export default App;
