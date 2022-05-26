@@ -1,5 +1,13 @@
-.form {
+.bulb-create__form {
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  button {
+    padding: 1.75rem 3.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+  }
 }
 
 .bulb-create {

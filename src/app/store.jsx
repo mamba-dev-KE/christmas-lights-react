@@ -7,7 +7,7 @@ export const toggleLights = () => {
 
 export const addBulb = (payload) => {
   return {
-    type: "ADD_RED",
+    type: "ADD_BULB",
     payload,
   };
 };
@@ -23,7 +23,7 @@ export const bulbReducer = (state, action) => {
     case "ADD_BULB":
       return {
         ...state,
-        redLights: action.payload,
+        bulbs: [...state.bulbs, action.payload],
       };
     default:
       return state;

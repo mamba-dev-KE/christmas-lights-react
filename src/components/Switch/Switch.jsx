@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { BulbContext } from "../../context/bulbContext";
-import { toggleLights } from "../../store/store";
+import { toggleLights } from "../../app/store";
 import "./Switch.scss";
 
 const Switch = () => {

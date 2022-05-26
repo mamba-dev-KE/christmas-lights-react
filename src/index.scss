@@ -31,11 +31,6 @@ body {
   margin-inline: auto;
 }
 
-/* Bulbs section */
-.bulbs {
-  min-height: 70vh;
-}
-
 /* UTILITY CLASSES */
 .grid {
   display: grid;
@@ -53,4 +48,8 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
 }

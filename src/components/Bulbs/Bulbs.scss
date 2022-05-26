@@ -1,4 +1,15 @@
 .bulbs {
-  border: 1px solid red;
+  align-items: start;
+  min-height: 70vh;
+
   margin-block: 2rem;
+  padding: 2rem;
+  border: 1px solid red;
+}
+
+.bulb {
+  width: 5rem;
+  aspect-ratio: 1;
+
+  border-radius: 4rem 1rem;
 }

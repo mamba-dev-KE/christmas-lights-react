@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
 import { BulbContext } from "../../context/bulbContext";
+import { addBulb } from "../../app/store";
 import "./BulbCreate.scss";
 
 const BulbCreate = () => {
   const [color, setColor] = useState("");
+
   const { dispatch } = useContext(BulbContext);
 
   const handleColorSelect = (e) => {
@@ -12,6 +14,15 @@ const BulbCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newBulb = {
+      id: new Date().getTime(),
+      color: color,
+    };
+
+    dispatch(addBulb(newBulb));
+
+    setColor("");
   };
 
   return (
@@ -19,18 +30,21 @@ const BulbCreate = () => {
       <h1 className="bulb-create__title text-center">
         Create Christmas Light Bulbs
       </h1>
-      <form className="form flex" onSubmit={handleSubmit}>
+      <form className="bulb-create__form flex" onSubmit={handleSubmit}>
         <select
           className="bulb-create__colors"
           name="color"
           id="color"
           value={color}
-          onChange={(e) => handleColorSelect(e)}
+          onChange={handleColorSelect}
         >
+          <option value="red">select color</option>
           <option value="red">Red</option>
           <option value="blue">Blue</option>
           <option value="green">Green</option>
+          <option value="gold">Gold</option>
         </select>
+        <button className="pointer">Create Bulb</button>
       </form>
     </article>
   );
