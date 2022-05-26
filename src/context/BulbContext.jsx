@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer } from "react";
 import { bulbReducer } from "../app/store";
 
 export const BulbContext = createContext();
