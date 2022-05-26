@@ -1,19 +1,22 @@
 import { useContext } from "react";
 import { BulbContext } from "../../context/bulbContext";
 import Bulb from "../Bulb/Bulb";
+import { AnimatePresence, motion } from "framer-motion";
 import "./Bulbs.scss";
 
 const Bulbs = () => {
   const {
     state: { bulbs },
   } = useContext(BulbContext);
-  
+
+  console.log(bulbs);
+
   return (
-    <section className="bulbs flex">
+    <motion.section className="bulbs flex" layout>
       {bulbs?.map((bulb) => (
         <Bulb key={bulb.id} {...bulb} />
       ))}
-    </section>
+    </motion.section>
   );
 };
 

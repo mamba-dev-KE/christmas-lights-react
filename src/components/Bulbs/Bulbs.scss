@@ -1,5 +1,7 @@
 .bulbs {
-  align-items: start;
+  flex-wrap: wrap;
+  align-content: start;
+  justify-content: start;
   min-height: 70vh;
 
   margin-block: 2rem;

@@ -19,6 +19,13 @@ export const removeBulb = (payload) => {
   };
 };
 
+export const toggleLight = (payload) => {
+  return {
+    type: "TOGGLE_BULB_LIGHT",
+    payload,
+  };
+};
+
 // reducers
 export const bulbReducer = (state, action) => {
   switch (action.type) {
@@ -26,6 +33,12 @@ export const bulbReducer = (state, action) => {
       return {
         ...state,
         isLightsOn: !state.isLightsOn,
+      };
+    case "TOGGLE_BULB_LIGHT":
+      console.log(action.payload);
+      return {
+        ...state,
+        yoh: [...state.bulbs],
       };
     case "ADD_BULB":
       return {

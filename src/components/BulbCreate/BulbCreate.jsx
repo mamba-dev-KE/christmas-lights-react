@@ -18,9 +18,12 @@ const BulbCreate = () => {
     const newBulb = {
       id: new Date().getTime(),
       color: color,
+      isOn: true,
     };
 
-    dispatch(addBulb(newBulb));
+    if (color) {
+      dispatch(addBulb(newBulb));
+    }
 
     setColor("");
   };
