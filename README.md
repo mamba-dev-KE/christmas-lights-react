@@ -5,7 +5,8 @@ An application that emulates the behavior of Christmas lights using React.
 ## Table of contents
 
 - [Links](#links)
-- [Installation](#instalation)
+- [Installation](#installation)
+- [How to use](#how-to-use)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
@@ -45,6 +46,17 @@ npm run dev
 http://localhost:3000/
 
 ```
+
+### How to use
+
+- Add light bulbs of different colors by select from the color dropdown and clicking on "Create Bulb".
+- Toggle the ON/OFF state of all bulbs using the "Turn On" or "Turn Off" buttons.
+- Toggle the bulb blinking pattern by pressing on "Toggle Pattern".
+- Each created bulb has three icons with the following functionalities:
+
+- First Icon - delete bulb on click.
+- Second Icon - turn bulb ON/OFF on click.
+- Third Icon - toggle bulb between broken and not broken status.
 
 ## My process
 
