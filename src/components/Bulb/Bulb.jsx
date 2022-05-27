@@ -56,18 +56,6 @@ const Bulb = ({ id, color, isOn, isBroken }) => {
       ></motion.div>
       <BulbControls id={id} />
     </motion.div>
-    // <motion.div initial="hidden" animate="visible" className="bulb flex">
-    //   <motion.div
-    //     key={id}
-    //     className="pointer"
-    //     style={{ backgroundColor: color }}
-    //     initial="hidden"
-    //     animate={isLightsOn && !isBroken && isOn ? "glow" : "visible"}
-    //     variants={isBroken ? bulbBrokenVariants : bulbVariants}
-    //     layout
-    //   ></motion.div>
-    //   <BulbControls id={id} />
-    // </motion.div>
   );
 };
 
