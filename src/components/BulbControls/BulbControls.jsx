@@ -1,12 +1,15 @@
-import { removeBulb, toggleLight } from "../../app/store";
 import { FaTimes, FaFreeCodeCamp, FaHeartBroken } from "react-icons/fa";
 import { TiArrowRepeat } from "react-icons/ti";
-import { useContext } from "react";
-import { BulbContext } from "../../context/BulbsContext";
+import { useDispatch } from "react-redux";
+import {
+  removeBulb,
+  toggleLightStatus,
+  toggleBrokenStatus,
+} from "../../app/bulbSlice";
 import "./BulbControls.scss";
 
 const BulbControls = ({ id }) => {
-  const { dispatch } = useContext(BulbContext);
+  const dispatch = useDispatch();
 
   return (
     <div className="bulb-controls flex">
@@ -14,13 +17,13 @@ const BulbControls = ({ id }) => {
         <FaTimes onClick={() => dispatch(removeBulb(id))} />
       </button>
       <button className="bulb__light-off pointer">
-        <FaFreeCodeCamp onClick={() => dispatch(toggleLight(id))} />
+        <FaFreeCodeCamp onClick={() => dispatch(toggleLightStatus(id))} />
       </button>
       <button className="bulb__light-change pointer">
-        <TiArrowRepeat onClick={() => dispatch(toggleLight(id))} />
+        <TiArrowRepeat onClick={() => dispatch(toggleBrokenStatus(id))} />
       </button>
       <button className="bulb__light-broken pointer">
-        <FaHeartBroken onClick={() => dispatch(toggleLight(id))} />
+        <FaHeartBroken onClick={() => dispatch(toggleBrokenStatus(id))} />
       </button>
     </div>
   );

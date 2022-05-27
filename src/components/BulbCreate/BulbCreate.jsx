@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
-import { BulbContext } from "../../context/BulbsContext";
-import { addBulb } from "../../app/store";
+import { useState } from "react";
+import { addBulb } from "../../app/bulbSlice";
+import { useDispatch } from "react-redux";
 import "./BulbCreate.scss";
 
 const BulbCreate = () => {
   const [color, setColor] = useState("");
 
-  const { dispatch } = useContext(BulbContext);
+  const dispatch = useDispatch();
 
   const handleColorSelect = (e) => {
     setColor(e.target.value);
@@ -19,6 +19,7 @@ const BulbCreate = () => {
       id: new Date().getTime(),
       color: color,
       isOn: true,
+      isBroken: false,
     };
 
     if (color) {

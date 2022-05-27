@@ -1,13 +1,10 @@
-import { useContext } from "react";
-import { BulbContext } from "../../context/BulbsContext";
 import { motion } from "framer-motion";
 import { BulbControls } from "../../components";
+import { useSelector } from "react-redux";
 import "./Bulb.scss";
 
-const Bulb = ({ id, color, isOn }) => {
-  const {
-    state: { isLightsOn },
-  } = useContext(BulbContext);
+const Bulb = ({ id, color, isOn, isBroken }) => {
+  const { isLightsOn } = useSelector((store) => store.bulbs);
 
   const bulbVariants = {
     hidden: {
@@ -25,12 +22,22 @@ const Bulb = ({ id, color, isOn }) => {
         repeat: Infinity,
         repeatType: "mirror",
         duration: 1,
+        ease: "easeInOut",
       },
     },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
+    },
+  };
+
+  const bulbBrokenVariants = {
+    hidden: {
+      opacity: 1,
+    },
+    visible: {
+      opacity: 0.9,
     },
   };
 
@@ -41,8 +48,8 @@ const Bulb = ({ id, color, isOn }) => {
         className="pointer"
         style={{ backgroundColor: color }}
         initial="hidden"
-        animate={isLightsOn ? "glow" : "visible"}
-        variants={bulbVariants}
+        animate={isLightsOn && isBroken === false ? "glow" : "visible"}
+        variants={isBroken ? bulbBrokenVariants : bulbVariants}
         layout
       ></motion.div>
       <BulbControls id={id} />

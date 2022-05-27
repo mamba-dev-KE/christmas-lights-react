@@ -1,13 +1,10 @@
-import { useContext } from "react";
-import { BulbContext } from "../../context/BulbsContext";
-import { toggleLights } from "../../app/store";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleLights } from "../../app/bulbSlice";
 import "./Switch.scss";
 
 const Switch = () => {
-  const {
-    state: { isLightsOn },
-    dispatch,
-  } = useContext(BulbContext);
+  const { isLightsOn } = useSelector((store) => store.bulbs);
+  const dispatch = useDispatch();
 
   return (
     <>

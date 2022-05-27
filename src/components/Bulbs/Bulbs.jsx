@@ -1,13 +1,10 @@
-import { useContext } from "react";
-import { BulbContext } from "../../context/BulbsContext";
 import Bulb from "../Bulb/Bulb";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 import "./Bulbs.scss";
 
 const Bulbs = () => {
-  const {
-    state: { bulbs },
-  } = useContext(BulbContext);
+  const { bulbs } = useSelector((store) => store.bulbs);
 
   if (!bulbs.length) {
     return (
