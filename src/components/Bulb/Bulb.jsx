@@ -7,7 +7,7 @@ const Bulb = ({ id, color, isOn, isBroken }) => {
   const { isLightsOn, isLightsPattern } = useSelector((store) => store.bulbs);
   const bulbVariants = {
     hidden: {
-      opacity: isOn ? 0.3 : 0.5,
+      opacity: isOn ? 0.9 : 0.5,
       y: 30,
       scale: isOn && isLightsOn && !isBroken ? 0.8 : 1,
       boxShadow:
@@ -16,7 +16,7 @@ const Bulb = ({ id, color, isOn, isBroken }) => {
     glow: {
       opacity: 1,
       y: 0,
-      scale: isLightsPattern ? [0.5, 1.8] : 0.7,
+      scale: isLightsPattern ? [2, 2.5] : 0.7,
       boxShadow: `1px 10px 12px 20px ${color}`,
       transition: {
         repeat: Infinity,
