@@ -4,6 +4,7 @@ import { persistReducer } from "redux-persist";
 import bulbReducer from "./bulbSlice";
 import thunk from "redux-thunk";
 
+// using redux persist to persist application state
 const persistConfig = {
   key: "root",
   storage,
