@@ -8,7 +8,10 @@ const Switch = () => {
 
   return (
     <>
-      <button onClick={() => dispatch(toggleLights())} className="switch">
+      <button
+        onClick={() => dispatch(toggleLights())}
+        className="switch__btn pointer"
+      >
         Lights {!isLightsOn ? "On" : "Off"}
       </button>
     </>

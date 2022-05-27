@@ -19,11 +19,11 @@ const BulbControls = ({ id }) => {
       <button className="bulb__light-off pointer">
         <FaFreeCodeCamp onClick={() => dispatch(toggleLightStatus(id))} />
       </button>
-      <button className="bulb__light-change pointer">
-        <TiArrowRepeat onClick={() => dispatch(toggleBrokenStatus(id))} />
-      </button>
       <button className="bulb__light-broken pointer">
         <FaHeartBroken onClick={() => dispatch(toggleBrokenStatus(id))} />
+      </button>
+      <button className="bulb__light-change pointer">
+        <TiArrowRepeat onClick={() => dispatch(toggleBrokenStatus(id))} />
       </button>
     </div>
   );

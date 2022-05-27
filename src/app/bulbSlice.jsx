@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   bulbs: [],
   isLightsOn: true,
+  pattern: "loop",
 };
 
 export const bulbSlice = createSlice({
@@ -34,6 +35,11 @@ export const bulbSlice = createSlice({
         return bulb;
       });
     },
+    toggleLightsPattern: (state) => {
+      state.pattern === "mirror"
+        ? (state.pattern = "reverse")
+        : (state.pattern = "mirror");
+    },
   },
 });
 
@@ -43,6 +49,7 @@ export const {
   removeBulb,
   toggleLightStatus,
   toggleBrokenStatus,
+  toggleLightsPattern,
 } = bulbSlice.actions;
 
 export default bulbSlice.reducer;
