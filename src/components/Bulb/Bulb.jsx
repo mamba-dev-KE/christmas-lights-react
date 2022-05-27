@@ -15,14 +15,14 @@ const Bulb = ({ id, color, isOn }) => {
     hidden: {
       opacity: isLightsOn ? 0.4 : 1,
       y: 10,
-      scale: 0.5,
+      scale: isLightsOn ? 0.5 : 1,
       boxShadow: "none",
     },
     glow: {
       opacity: 1,
       y: 0,
-      scale: [0.9, 1],
-      boxShadow: isOn ? `1px 10px 12px 20px ${color}` : `0 0 0 0 transparent`,
+      scale: isLightsOn ? [0.9, 1] : 1,
+      boxShadow: isOn ? `1px 10px 12px 20px ${color}` : `0 0 0 0 ${color}`,
       transition: {
         repeat: Infinity,
         repeatType: "mirror",
