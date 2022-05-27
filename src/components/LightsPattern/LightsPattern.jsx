@@ -8,7 +8,7 @@ const LightsPattern = () => {
   return (
     <>
       <button
-        onClick={() => dispatch(toggleLightsPattern("mirror"))}
+        onClick={() => dispatch(toggleLightsPattern())}
         className="pattern__btn pointer"
       >
         Toggle Pattern

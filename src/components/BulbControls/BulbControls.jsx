@@ -1,5 +1,4 @@
 import { FaTimes, FaFreeCodeCamp, FaHeartBroken } from "react-icons/fa";
-import { TiArrowRepeat } from "react-icons/ti";
 import { useDispatch } from "react-redux";
 import {
   removeBulb,
@@ -21,9 +20,6 @@ const BulbControls = ({ id }) => {
       </button>
       <button className="bulb__light-broken pointer">
         <FaHeartBroken onClick={() => dispatch(toggleBrokenStatus(id))} />
-      </button>
-      <button className="bulb__light-change pointer">
-        <TiArrowRepeat onClick={() => dispatch(toggleBrokenStatus(id))} />
       </button>
     </div>
   );

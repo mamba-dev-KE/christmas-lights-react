@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   bulbs: [],
   isLightsOn: true,
-  pattern: "loop",
+  isLightsPattern: true,
 };
 
 export const bulbSlice = createSlice({
@@ -36,9 +36,7 @@ export const bulbSlice = createSlice({
       });
     },
     toggleLightsPattern: (state) => {
-      state.pattern === "mirror"
-        ? (state.pattern = "reverse")
-        : (state.pattern = "mirror");
+      state.isLightsPattern = !state.isLightsPattern;
     },
   },
 });

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import "./Bulb.scss";
 
 const Bulb = ({ id, color, isOn, isBroken }) => {
-  const { isLightsOn, pattern } = useSelector((store) => store.bulbs);
+  const { isLightsOn, isLightsPattern } = useSelector((store) => store.bulbs);
   const bulbVariants = {
     hidden: {
       opacity: isOn && !isBroken ? 0.5 : 1,
@@ -15,7 +15,7 @@ const Bulb = ({ id, color, isOn, isBroken }) => {
     glow: {
       opacity: 1,
       y: 0,
-      scale: [0.9, 1, 1.5],
+      scale: isLightsPattern ? [1, 2, 1] : 1,
       boxShadow: `1px 10px 12px 20px ${color}`,
       transition: {
         repeat: Infinity,
