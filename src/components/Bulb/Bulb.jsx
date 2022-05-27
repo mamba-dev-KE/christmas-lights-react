@@ -13,21 +13,26 @@ const Bulb = ({ id, color, isOn }) => {
 
   const bulbVariants = {
     hidden: {
-      opacity: 0.6,
+      opacity: isLightsOn ? 0.4 : 1,
       y: 10,
       scale: 0.5,
       boxShadow: "none",
     },
-    visible: {
+    glow: {
       opacity: 1,
       y: 0,
       scale: [0.9, 1],
-      boxShadow: isLightsOn ? `1px 10px 12px 20px ${color}` : "none",
+      boxShadow: isOn ? `1px 10px 12px 20px ${color}` : `0 0 0 0 transparent`,
       transition: {
         repeat: Infinity,
         repeatType: "mirror",
         duration: 1,
       },
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
     },
   };
 
@@ -38,7 +43,7 @@ const Bulb = ({ id, color, isOn }) => {
         className="pointer"
         style={{ backgroundColor: color }}
         initial="hidden"
-        animate="visible"
+        animate={isLightsOn ? "glow" : "visible"}
         variants={bulbVariants}
         layout
       ></motion.div>
