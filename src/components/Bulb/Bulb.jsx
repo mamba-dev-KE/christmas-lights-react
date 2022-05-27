@@ -7,20 +7,21 @@ const Bulb = ({ id, color, isOn, isBroken }) => {
   const { isLightsOn, isLightsPattern } = useSelector((store) => store.bulbs);
   const bulbVariants = {
     hidden: {
-      opacity: isOn && !isBroken ? 0.5 : 1,
+      opacity: isOn ? 0.3 : 0.5,
       y: 30,
       scale: isOn && isLightsOn && !isBroken ? 0.8 : 1,
-      boxShadow: isOn ? `1px 5px 6px 10px ${color}` : `0 0 0 0 transparent`,
+      boxShadow:
+        isOn && isLightsOn ? `1px 5px 6px 10px ${color}` : `0 0 2px 0 ${color}`,
     },
     glow: {
       opacity: 1,
       y: 0,
-      scale: isLightsPattern ? [1, 2, 1] : 1,
+      scale: isLightsPattern ? [0.5, 1.8] : 0.7,
       boxShadow: `1px 10px 12px 20px ${color}`,
       transition: {
         repeat: Infinity,
         repeatType: "mirror",
-        duration: 1,
+        duration: 2,
         ease: "easeInOut",
       },
     },
@@ -38,7 +39,7 @@ const Bulb = ({ id, color, isOn, isBroken }) => {
     },
     visible: {
       opacity: 0.9,
-      scale: 0.5,
+      scale: 0.9,
     },
   };
 
@@ -55,6 +56,18 @@ const Bulb = ({ id, color, isOn, isBroken }) => {
       ></motion.div>
       <BulbControls id={id} />
     </motion.div>
+    // <motion.div initial="hidden" animate="visible" className="bulb flex">
+    //   <motion.div
+    //     key={id}
+    //     className="pointer"
+    //     style={{ backgroundColor: color }}
+    //     initial="hidden"
+    //     animate={isLightsOn && !isBroken && isOn ? "glow" : "visible"}
+    //     variants={isBroken ? bulbBrokenVariants : bulbVariants}
+    //     layout
+    //   ></motion.div>
+    //   <BulbControls id={id} />
+    // </motion.div>
   );
 };
 
