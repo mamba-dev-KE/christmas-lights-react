@@ -4,13 +4,15 @@ An application that emulates the behavior of Christmas lights using React.
 
 ## Table of contents
 
-- [Installation](#links)
 - [Links](#links)
+- [Installation](#instalation)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
 
-### Installation
+### Links
+
+- Live Site URL: [Visit here](https://radiant-chimera-729f74.netlify.app)
 
 ### Installation
 
@@ -18,6 +20,7 @@ An application that emulates the behavior of Christmas lights using React.
 
 ```
 git clone git@github.com:mamba-dev-KE/christmas-lights-react.git
+
 cd christmas-lights-react
 
 ```
@@ -29,16 +32,19 @@ npm install
 
 ```
 
-- Run the start script and if everything is correct, you will be able to access the application under:
+- Run the application start script
+
+```
+npm run dev
+
+```
+
+- If everything is correct, you will be able to access the application under:
 
 ```
 http://localhost:3000/
 
 ```
-
-### Links
-
-- Live Site URL: [Visit here](https://radiant-chimera-729f74.netlify.app)
 
 ## My process
 
