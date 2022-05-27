@@ -1,0 +1,12 @@
+.controls {
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--color-gold);
+  }
+}

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { BulbCreate, BulbControls, Bulbs } from "./components";
+import { BulbCreate, Controls, Bulbs } from "./components";
 import { BulbContext } from "./context/BulbsContext";
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div className="container">
       <BulbCreate />
-      <BulbControls />
+      <Controls />
       <Bulbs />
     </div>
   );

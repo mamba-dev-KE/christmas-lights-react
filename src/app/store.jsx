@@ -35,10 +35,10 @@ export const bulbReducer = (state, action) => {
         isLightsOn: !state.isLightsOn,
       };
     case "TOGGLE_BULB_LIGHT":
-      console.log(action.payload);
+      const bulbItem = state.bulbs.find((bulb) => bulb.id === action.payload);
       return {
         ...state,
-        yoh: [...state.bulbs],
+        bulbs: [...state.bulbs, { ...bulbItem, bulbItem.isOn = !bulbItem.isOn }],
       };
     case "ADD_BULB":
       return {

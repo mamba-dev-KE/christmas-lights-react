@@ -1,14 +1,12 @@
 import { useContext } from "react";
-import { FaTimes } from "react-icons/fa";
-import { removeBulb, toggleLight } from "../../app/store";
 import { BulbContext } from "../../context/BulbsContext";
 import { motion } from "framer-motion";
+import { BulbControls } from "../../components";
 import "./Bulb.scss";
 
 const Bulb = ({ id, color, isOn }) => {
   const {
     state: { isLightsOn },
-    dispatch,
   } = useContext(BulbContext);
 
   const bulbVariants = {
@@ -47,12 +45,7 @@ const Bulb = ({ id, color, isOn }) => {
         variants={bulbVariants}
         layout
       ></motion.div>
-      <motion.button className="bulb__remove pointer">
-        <FaTimes onClick={() => dispatch(removeBulb(id))} />
-      </motion.button>
-      <motion.button className="bulb__light-off pointer">
-        <FaTimes onClick={() => dispatch(toggleLight(id))} />
-      </motion.button>
+      <BulbControls id={id} />
     </motion.div>
   );
 };

@@ -1,12 +1,17 @@
-.controls {
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+.bulb-controls {
+  flex-direction: column;
+  align-items: start;
+}
 
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    border-bottom: 0.1rem solid var(--color-gold);
+.bulb__remove,
+.bulb__light-off,
+.bulb__light-change,
+.bulb__light-broken {
+  border: 0;
+  background: transparent;
+
+  svg {
+    color: grey;
+    font-size: 2rem;
   }
 }
